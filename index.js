@@ -10,6 +10,9 @@ function onLoad() {
         else if(['c','C'].includes(key)){
             state = '0';
         }
+        else if('Backspace' === key && !isNaN(Number(state.slice(0,-1)))){
+            state = state .slice(0, -1);
+        }
         
         if(state!=="0" && state[0]==='0' && !['.',','].includes(state[1]) ) 
             state=state.slice(1);
